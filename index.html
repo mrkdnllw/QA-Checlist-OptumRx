@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>QA Checklist</title>
+<style>
+	h3, body{
+		color: rgb(89, 92, 96);
+		
+		}
+		
+		button{
+			margin-top: 25px;
+			}
+			
+			footer {
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+	
+
+	color: rgb(239, 138, 29); 
+	 
+	background-color: rgb(239, 138, 29);"
+}
+
+.clear {
+    clear: both;
+}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+</head>
+<body style="margin: 15px;">
+
+<h1><img src="http://welcometooptumrx.com/assets/images/logo-optum.gif" width="200" height="51"/> <span id="h3">MS Gov QA Checklist</span></h1>
+
+
+
+<div style="top: 0px; height: 2px; color: white; margin-top: 0px; margin-bottom: 20px; background-color: orange;">.</div>
+
+<h3 id="onion"style="font-size: small; margin-top: 40px;">How to use: click list item to remove from list.</h3><button class="pure-button" id="startover" onclick="refresh_button_listener();"> Start over</button>
+
+<br />
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+/*hello
+add div with folowing style
+height: 2px; 
+color: white; 
+margin-top: 15px; 
+border-top-width: 20px; 
+background-color: orange;
+*/
+
+
+
+foo();
+
+function foo() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//para refill ni 
+//"<li class='abc' style='padding-top: 15px;'>"+ qali[i]+"</li>";
+var qali= ["<li class='abc veri_ship' style='padding-top: 15px;'>Verify shipping address</li>", //this means QA list item
+
+"<li class='abc summarize' style='padding-top: 15px;'>Summarize name, dose/strength of meds</li>",
+
+"<li class='abc current_copay' style='padding-top: 15px;'>Current copay</li>",
+
+"<li class='abc advise_eta' style='padding-top: 15px;'>Advise ETA</li>",
+
+"<li class='abc' style='padding-top: 15px;'>Verify enough medication till ETA</li>",
+"<li class='abc advise_last_ref' style='padding-top: 15px;'>Advise last refill</li>",
+
+"<li class='abc' style='padding-top: 15px;'>Offer PSC</li>",
+"<li class='abc' style='padding-top: 15px;'>Offer MD Line</li>",
+"<li class='abc active_cc' style='padding-top: 15px;'>Educate TST if CC available",
+"<li class='abc docu_sof' style='padding-top: 15px;'>Document in SOF</li>"]; 
+
+//qa list item array para WISMO
+var qali2= ["<li class='abc advise_eta' style='padding-top: 15px;'>Advise ETA</li>",
+
+"<li class='abc current_copay' style='padding-top: 15px;'>'Current' copay if asked</li>",
+
+"<li class='abc' style='padding-top: 15px;'>Check order status/shipping status</li>",
+
+"<li class='abc veri_ship' style='padding-top: 15px;'>Verify shipping address</li>",
+
+"<li class='abc' style='padding-top: 15px;'>For delayed: offer sample from MD/MO override to retail pharma</li>",
+
+"<li class='abc' style='padding-top: 15px;'>Document in WISMO Process/Shipped button in SOF</li>"]; 
+
+
+
+//para PSC
+var qali3= ["<li class='abc summarize' style='padding-top: 15px;'>Summarize name, dose/strength of meds</li>",
+
+"<li class='abc' style='padding-top: 15px;'>Verify MD name, address and phone number</li>",
+
+"<li class='abc' style='padding-top: 15px;'>Verify if Profile or Fill",
+
+"<li class='abc veri_ship' style='padding-top: 15px;'>Fill - Verify shipping address</li>",
+
+"<li class='abc current_copay' style='padding-top: 15px;'>'Current' copay</li>",
+
+"<li class='abc active_cc' style='padding-top: 15px;'>Add CC",
+"Advise ETA</li>",
+
+"<li class='abc docu_sof' style='padding-top: 15px;'>Document in SOF</li>"
+]; 
+
+
+
+//TST bullet points
+var qali4= ["<li class='abc summarize' style='padding-top: 15px;'>Summarize name, dose/strength of meds</li>",
+
+"<li class='abc' style='padding-top: 15px;'>Drop date</li>",
+
+"<li class='abc' style='padding-top: 15px;'>Price check</li>",
+
+"<li class='abc current_copay' style='padding-top: 15px;'>'Current' copay</li>",
+
+"<li class='abc veri_ship' style='padding-top: 15px;'>Verify shipping address</li>",
+
+"<li class='abc advise_eta' style='padding-top: 15px;'>Advise ETA</li>",
+
+"<li class='abc active_cc' style='padding-top: 15px;'>Check active CC on file</li>",
+
+"<li class='abc advise_last_ref' style='padding-top: 15px;'>Educate last fill if needed</li>",
+
+"<li class='abc' style='padding-top: 15px;'>Document 'REFILL' in Note tab</li>" 
+]; 
+
+
+
+
+
+
+
+
+//adding division for qali1 aka REFILL
+var html = "<div style='font-size: small; width: 300px; float: left; padding: 12px 5px 2px 11px;'><h3>Refill:</h3><ul>";
+
+
+for(i = 0; i < qali.length; i++) {//repeat below code until array size
+    
+    html += qali[i];
+
+}
+html += "</ul></div>";
+
+document.getElementsByTagName("body")[0].innerHTML+= html;//append code for qa li1 div to body ifloat lang to left para
+															//mawa ang default nga giappend nga new line 
+
+
+
+
+
+//adding division for qali2 aka WISMO
+var html = "<div style=' font-size: small;  width: 300px; float: left; padding: 12px 5px 2px 11px;'><h3>WISMO:</h3><ul>";
+
+
+for(i = 0; i < qali2.length; i++) {
+    
+    html += qali2[i];
+
+}
+html += "</ul></div>";
+
+
+document.getElementsByTagName("body")[0].innerHTML+= html;//append code for qa li1 div to body ifloat lang to left para
+															//mawa ang default nga giappend nga new line 
+
+
+
+
+
+
+//adding division for qali3 aka PSC
+var html = "<div style=' font-size: small; width: 250px; float: left; padding: 12px 5px 2px 11px;'><h3>PSC:</h3><ul>";
+
+
+for(i = 0; i < qali3.length; i++) {
+    
+    html += qali3[i];
+
+}
+html += "</ul></div>";
+
+document.getElementsByTagName("body")[0].innerHTML+= html;
+
+
+
+
+
+
+
+
+//adding division for qali4 aka TST
+var html = "<div style='font-size: small;width: 200px; float: left; padding: 12px 5px 2px 11px; margin-bottom: 200px;'><h3>TST:</h3><ul>";
+
+var temp = "";
+for(i = 0; i < qali4.length; i++) {
+    
+    html += qali4[i];
+	
+	temp+= qali4[i];
+
+}
+html += "</ul></div><footer class='clear'>hello</footer>";
+
+document.getElementsByTagName("body")[0].innerHTML+= html;//append code for qa li1 div to body ifloat lang to left para
+															//mawa ang default nga giappend nga new line 
+
+
+
+
+
+
+
+
+
+
+
+//adds listeners to list items 
+var e = document.getElementsByClassName("abc");// gets all list item element ojb/robos regardless of division it belongs to
+
+for( i = 0; i < e.length; i++){//repeat below code for total number of list items 
+	e[i].addEventListener("click", li_click_listener);//add listeners for every list items 
+}
+
+
+//listener functions to delete self(li) from list
+function li_click_listener(e){
+var class_name = e.target.className;//will return a text of classname collections
+var class_name = class_name.split(" ");//splits class names into individual elements, and 2nd element moy angay iremove if naa
+
+if(class_name[1] != null){
+
+var temp = "."+class_name[1];
+ //jQuery(temp).remove();
+ jQuery(temp).fadeOut(600, function(){});
+}
+
+//e.target.parentNode.removeChild(e.target);//ang parent ani kay division then ang target kay ang li, so div ang moremove sa li since siya man ang parent
+jQuery(e.target).fadeOut(400, function(){});
+
+}
+
+}//close 
+
+function refresh_button_listener() {
+    location.reload();
+
+}
+
+// add undo fun here 
+
+//add div/hr after 
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
