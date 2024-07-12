@@ -1,0 +1,1 @@
+x irun lang ni diretso sa browser. mo auto na sha og load sa libraries pud. that's how I coded it man. 
